@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>基于Redis实现排行榜Demo</title>
+    <link  rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.min.css}"/>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center" style="height:107px;background-color:#aaaaaa;">基于Redis实现排行榜Demo        <a class="btn btn-primary" href="/clear">重置</a>
+            </h1>
+            <div class="alert alert-success" role="alert" th:if="${dynamicList.empty}">
+                <span><strong>暂时还没有销售情况！</strong></span>
+            </div>
+            <div class="alert alert-success" role="alert" th:each="dynamic : ${dynamicList}">
+                <span><strong th:text="${dynamic.time} +'成功售出一台'+ ${dynamic.phone} ">${dynamic.time}成功售出一台${dynamic.phone}！</strong><br/></span>
+            </div>
+
+        </div>
+    </div>
+    <div class="row" style="height:350px;">
+        <div class="col-md-6">
+            <h1 class="text-center">商品列表</h1>
+            <ul class="list-group">
+                    <li th:each="phone : ${phones}" class="list-group-item">
+                        <span th:text="${phone.name}">手机名</span>&nbsp;&nbsp;&nbsp;&nbsp;<span th:text="${phone.ranking}">手机销量排名</span>
+                        <a class="btn btn-primary btn-sm" style="float: right;" th:href="@{'/buy/' + ${phone.id}}">购买</a>
+                    </li>
+            </ul>
+        </div>
+        <div class="col-md-6 col-xl-6 offset-xl-0">
+            <h1 class="text-center">销量排行榜</h1>
+            <ul class="list-group">
+                <div th:if="${phbList.empty}">
+                    <h4 class="text-center">暂无商品上榜</h4>
+                </div>
+                <ul>
+                    <li class="list-group-item" th:each="ph : ${phbList}">
+                        <span th:text="${ph.name}"></span>
+                        <span style="float: right;" th:text="'已售：'+${ph.sales}">已售：1 台</span>
+                    </li>
+                </ul>
+               <!-- <%&#45;&#45;<li class="list-group-item"><span>小米</span> <span style="float: right;">已售：4 台</span>
+            </li>
+                <li class="list-group-item"><span>华为</span> <span style="float: right;">已售：4 台</span>
+                </li>
+                <li class="list-group-item"><span>一加</span> <span style="float: right;">已售：4 台</span>
+                </li>
+                <li class="list-group-item"><span>vivo</span> <span style="float: right;">已售：4 台</span>
+                </li>&#45;&#45;%>-->
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="footer-basic">
+    <footer>
+        <p class="copyright"><a href="https://github.com/mosiki">WeJan</a> © 2018</p>
+    </footer>
+</div>
+<script th:src="@{/js/jquery.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+</body>
+</html>
