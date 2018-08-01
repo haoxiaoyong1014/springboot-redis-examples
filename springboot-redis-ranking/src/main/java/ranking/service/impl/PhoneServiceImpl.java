@@ -35,7 +35,6 @@ public class PhoneServiceImpl implements PhoneService {
         // 注：保持代码简介，未使用 JedisPool 生产环境 应使用连接池
         jedis = new Jedis("116.62.187.190", 6379);
 
-
     }
 
     @Override
@@ -69,7 +68,6 @@ public class PhoneServiceImpl implements PhoneService {
 
     @Override
     public List<DynamicInfo> getBuyDynamic() {
-
         List<DynamicInfo> dynamicList = new ArrayList<DynamicInfo>();
         for (int i = 0; i < 3; i++) {
            /* jedis.lindex(String key,int index)
