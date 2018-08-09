@@ -1,8 +1,8 @@
 # springboot-redis-ranking
 基于Redis实现商品排行榜
 
-![image](https://github.com/haoxiaoyong1014/springboot-redis-examples/raw/master/springboot-redis-ranking//src/main/java/ranking/image/redis-ranking.gif)
 **前言**
+
 排行榜作为互联网应用中几乎必不可少的一个元素，其能够勾起人类自身对比的欲望，从而来增加商品的销量。排行榜的实现方式基本大同小异，大部分都基于 Redis 的有序集合 sorted set 来实现。本文通过了商品销售排行榜这一模型，来进行演示,同时您还可以根据本文章实现
 文章的点赞排行,
 积分排行等..
