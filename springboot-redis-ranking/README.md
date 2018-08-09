@@ -7,6 +7,7 @@
 文章的点赞排行,
 积分排行等..
 项目Github地址：https://github.com/haoxiaoyong1014/springboot-redis-examples/tree/master/springboot-redis-ranking
+
 **需求**
 
 1,按照商品销量进行排行
