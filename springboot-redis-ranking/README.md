@@ -8,11 +8,10 @@
 积分排行等..
 项目Github地址：https://github.com/haoxiaoyong1014/springboot-redis-examples/tree/master/springboot-redis-ranking
 
-**需求**
-
-1,按照商品销量进行排行
-2,可以获得指定商品的排名
-3,显示实时销售动态情况
+* 需求
+    * 按照商品销量进行排行
+    * 可以获得指定商品的排名
+    * 显示实时销售动态情况
 
 
 **一,首先看一下效果图:**
