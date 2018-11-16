@@ -33,7 +33,7 @@ public class PhoneServiceImpl implements PhoneService {
     @PostConstruct
     public void initRedisClient () {
         // 注：保持代码简介，未使用 JedisPool 生产环境 应使用连接池
-        jedis = new Jedis("116.62.187.190", 6379);
+        jedis = new Jedis("127.0.0.1", 6379);
 
     }
 
