@@ -9,4 +9,6 @@
 
 2018/11/16 添加 redis-manage(<a href="https://github.com/haoxiaoyong1014/redis-manage">Redis的后台管理</a>,结合前端项目<a href="https://github.com/haoxiaoyong1014/redis-manage-view">redis-manage-view</a>)
 
+2019/8/16 添加 springboot-idempotent(<a href="https://github.com/haoxiaoyong1014/springboot-examples/tree/master/springboot-idempotent">springboot + redis + 注解 + 拦截器 实现接口幂等性校验</a>)
+
 持续更新中....
