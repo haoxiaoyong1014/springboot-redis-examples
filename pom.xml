@@ -16,6 +16,7 @@
     <modules>
         <module>springboot-redis-ranking</module>
         <module>springboot-redis-friends</module>
+        <module>springboot-mybatis-redis-cache</module>
     </modules>
 
 
