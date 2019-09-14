@@ -11,7 +11,7 @@ import java.util.List;
  * E-mail:hxyHelloWorld@163.com
  * github:https://github.com/haoxiaoyong1014
  */
-@Mapper
+//@Mapper
 public interface PersonMapper {
 
     int deleteByPrimaryKey(Long id);

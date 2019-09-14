@@ -7,15 +7,12 @@
     <cache type="org.mybatis.caches.ehcache.EhcacheCache"/>-->
 
     <!--根据需求调整缓存参数：-->
-    <cache type="org.mybatis.caches.ehcache.EhcacheCache">
-        <property name="timeToIdleSeconds" value="3600"/>
-        <property name="timeToLiveSeconds" value="3600"/>
-        <!-- 同ehcache参数maxElementsInMemory -->
-        <property name="maxEntriesLocalHeap" value="1000"/>
-        <!-- 同ehcache参数maxElementsOnDisk -->
-        <property name="maxEntriesLocalDisk" value="10000000"/>
-        <property name="memoryStoreEvictionPolicy" value="LRU"/>
-    </cache>
+        <cache type="com.haoxy.example.utils.RedisCache">
+            <property name="eviction" value="LRU" />
+            <property name="flushInterval" value="6000000" />
+            <property name="size" value="1024" />
+            <property name="readOnly" value="false" />
+        </cache>
 
     <resultMap id="BaseResultMap" type="com.haoxy.example.model.Person">
         <!--
