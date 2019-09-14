@@ -74,12 +74,24 @@ public class PersonController {
         return JSON.toJSONString(pageInfo);
     }
 
-    @RequestMapping("/cachePage")
-    public String cacheByPage() {
+    @RequestMapping("/cacheFindAll")
+    public String cacheByFindAll() {
         long begin = System.currentTimeMillis();
         List<Person> persons = personService.findAll();
         long ing = System.currentTimeMillis();
         personService.findAll();
+        long end = System.currentTimeMillis();
+        System.out.println(("第一次请求时间：" + (ing - begin) + "ms"));
+        System.out.println(("第二次请求时间:" + (end - ing) + "ms"));
+        return JSON.toJSONString(persons);
+    }
+
+    @RequestMapping("/cacheFindAllPerson")
+    public String cacheFindAllPerson() {
+        long begin = System.currentTimeMillis();
+        List<Person> persons = personService.findAllPerson();
+        long ing = System.currentTimeMillis();
+        personService.findAllPerson();
         long end = System.currentTimeMillis();
         System.out.println(("第一次请求时间：" + (ing - begin) + "ms"));
         System.out.println(("第二次请求时间:" + (end - ing) + "ms"));
