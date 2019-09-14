@@ -346,7 +346,7 @@ public class RedisCache implements Cache {
         
         
 ```
-useCache=
+
 这里只列出重要的部分; [具体见项目源码](https://github.com/haoxiaoyong1014/springboot-redis-examples/tree/master/springboot-mybatis-redis-cache);
 
 **PersonController**
@@ -383,7 +383,9 @@ useCache=
 
 可以很明显的看到`findAllPerson`方法比`findAll`方法快很多,在mapper.xml文件中`findAllPerson`方法的查询语句`useCache="false"`
 这个语句的查询结果是没有放到二级缓存的,竟然比`findAll`方法(在mapper.xml文件中`findAll`方法的查询语句`useCache="true"`放到了二级缓存中)快很多;
+
 这是因为我们使用的是Redis做的二级缓存；这也是为什么mybatis帮我们实现了用EhcacheCache做二级缓存的原因;
+
 下一篇文章我们对两者进行比较;
 
 [本案例地址](https://github.com/haoxiaoyong1014/springboot-redis-examples/tree/master/springboot-mybatis-redis-cache);
